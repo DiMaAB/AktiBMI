@@ -7,21 +7,36 @@ import Vaga from '../Vaga/Vaga';
 import moment from 'moment';
 class App extends Component {
   state={
-    gender: '',
+    male: false,
+    female: false,
     growth: '',
     weight: '',
     wantWeight: '',
     date: '',
     resultSub: 0,
 
+
   }
   
   componentDidMount(){
     this.time();
   }
-
+ 
+  checkMale=()=>{
+    this.setState({
+      male: true,
+      female: false,
+      })
+  }
+  checkFemale=()=>{
+    this.setState({
+      female: true,
+      male: false,
+      })
+  }
+  
   inputChange=(e)=>{
-      console.log(e);
+      // console.log(e);
     let value=e.target.value;
     let name=e.target.name;
     this.setState({
@@ -43,7 +58,7 @@ class App extends Component {
   }
 
   render() {
-    const{gender,growth,weight,wantWeight,date,resultSub}=this.state;
+    const{gender,growth,weight,wantWeight,date,resultSub,male,female}=this.state;
     console.log(date);
     return (
       <div>
@@ -56,9 +71,20 @@ class App extends Component {
             growth={growth} 
             weight={weight}
             sub={this.sub}
+            male={male}
+            female={female}
+            checkMale={this.checkMale}
+            checkFemale={this.checkFemale}
             inputChange={this.inputChange}/>}/>
             <Route path="/save" render={ (props) => 
-            <Menu  growth={growth} weight={weight} wantWeight={wantWeight} date={date} resultSub={resultSub}{...props}/>}/>
+            <Menu  
+            growth={growth} 
+            weight={weight} 
+            wantWeight={wantWeight}
+            date={date}
+            male={male} 
+            resultSub={resultSub}
+            {...props}/>}/>
 
            
         </Switch>

@@ -5,7 +5,7 @@ import {NavLink} from 'react-router-dom';
 import Vaga from '../Vaga/Vaga';
 import History from '../History/History';
 import {Switch, Route} from 'react-router-dom';
-const Menu = ({growth,weight,match,wantWeight,date,resultSub}) => {
+const Menu = ({growth,weight,match,wantWeight,date,resultSub,male}) => {
     console.log(match);
     return (
         <div className="menu">
@@ -21,8 +21,8 @@ const Menu = ({growth,weight,match,wantWeight,date,resultSub}) => {
             weight={weight}
             wantWeight={wantWeight}
             date={date}
-            resultSub={resultSub
-            }/>}/>
+            resultSub={resultSub}
+            male={male}/>}/>
             <Route path="/history" render={ () => 
             <History />}/>
             </Switch>

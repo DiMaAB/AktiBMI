@@ -1,11 +1,12 @@
 import React from 'react';
 import './Vaga.css';
 import ReactSpeedometer from "react-d3-speedometer"
-const Vaga = ({weight, growth,wantWeight,date,resultSub}) => {
+const Vaga = ({weight, growth,wantWeight,date,resultSub,male}) => {
     return (
         <div className="root_vaga">
 
             <div className='vaga_now'>
+            <p>{male ? 'Пол: мужской' :'Пол: женский'}</p>
               <p className="vaga_title_now_weight">Текущий вес:</p>
               <p className="vaga_now_weight">{weight} <span>kg</span></p>
               <p>{date}</p>

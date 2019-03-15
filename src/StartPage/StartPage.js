@@ -3,7 +3,7 @@ import './StartPage.css';
 import PropTypes from 'prop-types';
 import img from '../img/start.png';
 import {NavLink} from 'react-router-dom';
-const StartPage = ({gender,growth,weight,inputChange,wantWeight, sub}) => {
+const StartPage = ({gender,growth,weight,inputChange,wantWeight, sub,checkMale,checkFemale,male,female}) => {
     return (
         <div className="root">
             <img src={img} alt="startpage" />
@@ -12,7 +12,8 @@ const StartPage = ({gender,growth,weight,inputChange,wantWeight, sub}) => {
                     <ul className="ul">
                         <li className="li">
                             <p className="p">Пол</p>  
-                            <input type='text' name="gender" className="gender" value={gender} onChange={inputChange}/>
+                           <button className={male ? 'male unMale ' : 'male '} onClick={checkMale} >M</button>
+                           <button className={female ? 'femail unFemail ' : 'femail '} onClick={checkFemale} >Ж</button>
                         </li>
                         <li className="li">
                             <p className='p'>Вес</p>

@@ -26,3 +26,17 @@ img{
 .p{
     width: 40%;
 }
+.male{
+    width: 20%;
+}
+.unMale{
+    width: 20%;
+    background-color: greenyellow;
+}
+.femail{
+    width: 20%;
+}
+.unFemail{
+    width: 20%;
+    background-color: greenyellow;
+}
